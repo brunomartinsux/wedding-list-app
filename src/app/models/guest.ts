@@ -1,7 +1,7 @@
 export class Guest {
-    img:string = 'https://picsum.photos/300';
-    name:string = 'Cassandra Dunn';
-    status: 'guest' | 'owner' = 'owner';
+    img:string;
+    name:string;
+    status: 'guest' | 'owner';
 
 
     constructor(data: any){

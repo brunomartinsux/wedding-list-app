@@ -1,0 +1,35 @@
+button{
+    border: none;
+    padding: 0.5em;
+    color: whitesmoke;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.primary{
+    background-color: rgb(37, 25, 65);
+}
+
+button.btn-icon{
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(37, 25, 65);
+}
+
+.success{
+    background-color: rgb(23, 184, 23) !important;
+}
+
+.danger{
+    background-color: rgba(184, 28, 23, 0.952) !important;
+}
+
+button:hover{
+    background-color: rgb(17, 12, 31);
+    cursor: pointer;
+}

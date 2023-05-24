@@ -1,0 +1,1884 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [
+        {
+            "name": "Guest",
+            "id": "class-Guest-a5978e5d5315a3af9bef54024e7715a50cd07ed45063574c9691ef5a10cb63fdc76c1db9078bf8caf65d4ad907be431dc5233d7ff84b50ecabae2965850fa703",
+            "file": "src/app/models/guest.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class Guest {\r\n    img:string = 'https://picsum.photos/300';\r\n    name:string = 'Cassandra Dunn';\r\n    status: 'guest' | 'owner' = 'owner';\r\n\r\n\r\n    constructor(data: any){\r\n        this.img = data.img;\r\n        this.name = data.name || 'Sem nome';\r\n        this.status = data.status || 'guest'\r\n    }\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 4,
+                "jsdoctags": [
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "img",
+                    "defaultValue": "'https://picsum.photos/300'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "'Cassandra Dunn'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "status",
+                    "defaultValue": "'owner'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"guest\" | \"owner\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AddMemberComponent",
+            "id": "component-AddMemberComponent-e287cdb2f4ed3eb6328cf56a967a34dcc850a44475f896469e90e9158e8228be861ba9df8c2a39915384e0138d17a94ef608147bc9e97a26a8586cfd02675e7f",
+            "file": "src/app/components/molecules/add-member/add-member.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-add-member",
+            "styleUrls": [
+                "./add-member.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./add-member.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "newGuestEvent",
+                    "defaultValue": "new EventEmitter<Guest>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "guestName",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "showGuestInput",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "emitNewGuest",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, OnInit, Output } from '@angular/core';\nimport { Guest } from 'src/app/models/guest';\n\n@Component({\n  selector: 'app-add-member',\n  templateUrl: './add-member.component.html',\n  styleUrls: ['./add-member.component.css']\n})\nexport class AddMemberComponent implements OnInit {\n\n  guestName: string = ''\n  showGuestInput:boolean = false\n  @Output() newGuestEvent = new EventEmitter<Guest>()\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  emitNewGuest(){\n    this.newGuestEvent.emit(new Guest({name: this.guestName, status: 'guest', img: 'https://picsum.photos/300'}))\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./add-member.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-button class=\"primary\" *ngIf=\"!showGuestInput\" (click)=\"showGuestInput = !showGuestInput\">Add Guest</app-button>\n<div style=\"display: flex;align-items: center;\" *ngIf=\"showGuestInput\" >\n    <app-input (onChangeEvent)=\"guestName = $event\" placeholder=\"Type your guests name\">Add Guest</app-input>\n    <app-button class=\"btn-icon success\" style=\"margin-inline: 4px;\" (click)=\"emitNewGuest()\">+</app-button>\n    <app-button class=\"btn-icon danger\" (click)=\"showGuestInput = !showGuestInput\">x</app-button>\n</div>"
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-789769cb950da3ed906b7709aff9f2104df06474f35d4d1fbabb0a6a9288c2fbf0b2e01803d2fc7b34074e66a260cec7a8f1a14921fd5e170f8005bc1299761a",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'wedding-list-app'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css'],\n})\nexport class AppComponent {\n  title = 'wedding-list-app';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<app-home-page></app-home-page>"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-2a67ed55fcce7f7eed9ef4f1ccedbc14f6fb5eb0e0c07f70876a34e96ae0bddc8190cc06eed7d1a2b68a6cea6953fcfdbe93967e67cdf0aae0e9f3bb7501dbc1",
+            "file": "src/app/components/atoms/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button",
+            "styleUrls": [
+                "./button.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "class",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "content",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClickEvent",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "emitOnClickEvent",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.css']\n})\nexport class ButtonComponent implements OnInit {\n\n  @Input() class: string\n  @Input() content: string\n\n  @Output() onClickEvent = new EventEmitter<boolean>()\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  emitOnClickEvent(){\n    this.onClickEvent.emit(true)\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "button{\r\n    border: none;\r\n    padding: 0.5em;\r\n    color: whitesmoke;\r\n    border-radius: 8px;\r\n    font-size: 14px;\r\n    font-weight: 500;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n\r\nbutton.primary{\r\n    background-color: rgb(37, 25, 65);\r\n}\r\n\r\nbutton.btn-icon{\r\n    font-size: 20px;\r\n    height: 40px;\r\n    width: 40px;\r\n    background-color: rgb(37, 25, 65);\r\n}\r\n\r\n.success{\r\n    background-color: rgb(23, 184, 23) !important;\r\n}\r\n\r\n.danger{\r\n    background-color: rgba(184, 28, 23, 0.952) !important;\r\n}\r\n\r\nbutton:hover{\r\n    background-color: rgb(17, 12, 31);\r\n    cursor: pointer;\r\n}",
+                    "styleUrl": "./button.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button [class]=\"class\">\n    <ng-content></ng-content>\n</button>"
+        },
+        {
+            "name": "GuestCardComponent",
+            "id": "component-GuestCardComponent-a0d1001d5ddb656ae8e93cb5f11fad8278ec6ecbbe382f03707390964fc03c1c61056ef10e1f66e7816bf2eb7f10661918da38f9cc411e1fcae22015d4874474",
+            "file": "src/app/components/molecules/guest-card/guest-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-guest-card",
+            "styleUrls": [
+                "./guest-card.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./guest-card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "guest",
+                    "defaultValue": "new Guest({})",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "Guest",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onRemoveClicked",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "removeGuest",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';\nimport { Guest } from 'src/app/models/guest';\n\n@Component({\n  selector: 'app-guest-card',\n  templateUrl: './guest-card.component.html',\n  styleUrls: ['./guest-card.component.css']\n})\nexport class GuestCardComponent implements OnInit {\n\n  @Input() guest: Guest = new Guest({})\n  \n  @Output() onRemoveClicked = new EventEmitter<boolean>()\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  removeGuest(){\n    this.onRemoveClicked.emit(true)\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".guest-card-container{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    border: 1px solid rgba(128, 128, 128, 0.164);\r\n    height: 50px;\r\n    max-width: 600px;\r\n    padding: 0.5em;\r\n    padding-inline: 1em;\r\n    border-radius: 8px;\r\n    margin-bottom: 8px;\r\n}",
+                    "styleUrl": "./guest-card.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"guest-card-container\">\r\n    <div style=\"display: flex; align-items: center;\">\r\n        <app-profile-image [src]=\"guest.img ? guest.img : 'assets/icon/default-img.jpg'\" [size]=\"'md'\" style=\"margin-right: 16px;\"></app-profile-image>\r\n        <app-text [content]=\"guest.name\"></app-text>\r\n    </div>\r\n    <app-heading *ngIf=\"guest.status == 'owner'; else elseStatus\" [content]=\"guest.status\" (click)=\"removeGuest()\" [class]=\"'h4 text-muted'\"></app-heading>\r\n    <ng-template #elseStatus>\r\n        <app-button class=\"btn-icon\" (onClickEvent)=\"removeGuest()\">\r\n            x\r\n        </app-button>\r\n    </ng-template>\r\n</div>\r\n"
+        },
+        {
+            "name": "GuestListComponent",
+            "id": "component-GuestListComponent-2672333942a8ff7370dad43cd38cc9ca80984f1609b7a4e84719246af557435ad90e63636712ceb19507b2bbb72139ee56720a2db633b37ea4b6456152f3fa6b",
+            "file": "src/app/components/organisms/guest-list/guest-list.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-guest-list",
+            "styleUrls": [
+                "./guest-list.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./guest-list.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "guestList",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "Guest[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "addGuest",
+                    "args": [
+                        {
+                            "name": "newGuest",
+                            "type": "Guest",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "newGuest",
+                            "type": "Guest",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { Guest } from 'src/app/models/guest';\n\n@Component({\n  selector: 'app-guest-list',\n  templateUrl: './guest-list.component.html',\n  styleUrls: ['./guest-list.component.css']\n})\nexport class GuestListComponent implements OnInit {\n  \n  @Input() guestList: Guest[] = []\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  addGuest(newGuest: Guest){\n    this.guestList.push(newGuest)\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".guest-list-container {\r\n    background-color: white;\r\n    padding: 1em;\r\n    border-radius: 8px 8px 0 0;\r\n    margin-top: -32px;\r\n    height: calc(100vh - 150px);\r\n    width: 100%;\r\n}\r\n\r\n.scroll-behavior {\r\n    max-height: calc(100vh - 200px);\r\n    overflow-y: scroll;\r\n    overflow-x: hidden;\r\n}\r\n\r\n.scroll-behavior::-webkit-scrollbar {\r\n    display: none;\r\n}\r\n\r\n@media (min-width: 600px) {\r\n    .guest-list-container {\r\n        width: 30%;\r\n    }\r\n}",
+                    "styleUrl": "./guest-list.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"guest-list-container\">\n    <app-heading content=\"Share list\" class=\"h4\"></app-heading>\n    <div style=\"display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px\">\n        <app-text content=\"List members\" class=\"text-muted\"></app-text>\n        <app-add-member (newGuestEvent)=\"addGuest($event)\"></app-add-member>\n    </div>\n    <div class=\"scroll-behavior\">\n        <ng-container *ngFor=\"let guest of guestList\">\n            <app-guest-card [guest]=\"guest\"></app-guest-card>\n        </ng-container>\n    </div> \n</div>"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-3e4b746fe7dd91d7c8682668500d7e396687e4dd96e937dcdcda0b00213401ef71f0e2adaa1f924df54ed641b1729f2b808fd827fde8f111cf6cfb63cd983fab",
+            "file": "src/app/components/molecules/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [
+                "./header.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.css']\n})\nexport class HeaderComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".header-container{\r\n    height: 150px;\r\n    display: flex;\r\n    align-items: center;\r\n    padding-left: 1em;\r\n}",
+                    "styleUrl": "./header.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"header-container\">\n    <app-heading class=\"h1\" content=\"Wedding List\"></app-heading>\n</div>"
+        },
+        {
+            "name": "HeadingComponent",
+            "id": "component-HeadingComponent-76eec9680cf3ade89faca74a4536049c3967023732c767416ff766706a8d4a553a1391a1fa70fefe6367394d4cbabca895e95151e476e81894f7a3e417f8730e",
+            "file": "src/app/components/atoms/typografy/heading/heading.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-heading",
+            "styleUrls": [
+                "./heading.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./heading.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "class",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "content",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-heading',\n  templateUrl: './heading.component.html',\n  styleUrls: ['./heading.component.css']\n})\nexport class HeadingComponent implements OnInit {\n\n  @Input() class: string = ''\n  @Input() content: string = ''\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "div.h1{\r\n    font-size: 36px;\r\n    font-weight: 500;\r\n    color: rgba(219, 219, 219, 0.971);\r\n}\r\n\r\n\r\ndiv.h4{\r\n   font-weight: 500;\r\n   color: rgb(32, 32, 32); \r\n   font-size: 18px;\r\n}\r\n\r\n.text-muted{\r\n    color: rgba(128, 128, 128, 0.252);\r\n}",
+                    "styleUrl": "./heading.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div [class]=\"class\">{{content}}</div>"
+        },
+        {
+            "name": "HomePageComponent",
+            "id": "component-HomePageComponent-ad4a417c57f610fd89a6ea8f5fbf26821768c2dfe810e40b3cdebe310915d71b1140f9b580ecbe6cbc31199883fb76d97e677d98f2fb313eb729e6f4b1228b8a",
+            "file": "src/app/components/pages/home-page/home-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home-page",
+            "styleUrls": [
+                "./home-page.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home-page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "guestList",
+                    "defaultValue": "[\n    new Guest({name: 'Bruno Martins', status: 'owner', img:'https://picsum.photos/300'})\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Guest[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Guest } from 'src/app/models/guest';\n\n@Component({\n  selector: 'app-home-page',\n  templateUrl: './home-page.component.html',\n  styleUrls: ['./home-page.component.css']\n})\nexport class HomePageComponent implements OnInit {\n\n  guestList: Guest[] = [\n    new Guest({name: 'Bruno Martins', status: 'owner', img:'https://picsum.photos/300'})\n  ]\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./home-page.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-main-guest-list [guestList]=\"guestList\"></app-main-guest-list>"
+        },
+        {
+            "name": "InputComponent",
+            "id": "component-InputComponent-900ae1ec808f98208a822857d428bdaf34503a0716f558045e2d042a488fe3c37c9892ce2200f20017c3632fb7af1b4c47e044d40258203b56badd17788f8b1b",
+            "file": "src/app/components/atoms/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-input",
+            "styleUrls": [
+                "./input.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "class",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "'Digite...'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onChangeEvent",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "emitOnChange",
+                    "args": [
+                        {
+                            "name": "inputValue",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "inputValue",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.css']\n})\nexport class InputComponent implements OnInit {\n\n  @Input() class: string;\n  @Input() placeholder: string = 'Digite...';\n  \n  @Output() onChangeEvent = new EventEmitter<string>()\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  emitOnChange(inputValue: any){\n    this.onChangeEvent.emit(inputValue.target.value)\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "input{\r\n    all: none;\r\n    padding-inline: 1em;\r\n    border: 1px solid rgb(37, 25, 65);\r\n    border-radius: 8px;\r\n    height: 38px;\r\n}",
+                    "styleUrl": "./input.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<input type=\"text\" [placeholder]=\"placeholder\" class=\"form-control\" (change)=\"emitOnChange($event)\">\n"
+        },
+        {
+            "name": "MainGuestListComponent",
+            "id": "component-MainGuestListComponent-d9437677d57a033a00cd88bc01fa0ce5444f6d9fafe2dd22b767f0284370279e36bf049d4a44b95e10554f706d6f3de9377916943b77970a7f389fed1bf1de27",
+            "file": "src/app/components/templates/main-guest-list/main-guest-list.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-main-guest-list",
+            "styleUrls": [
+                "./main-guest-list.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./main-guest-list.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "guestList",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "Guest[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { Guest } from 'src/app/models/guest';\n\n@Component({\n  selector: 'app-main-guest-list',\n  templateUrl: './main-guest-list.component.html',\n  styleUrls: ['./main-guest-list.component.css']\n})\nexport class MainGuestListComponent implements OnInit {\n\n  @Input() guestList: Guest[] = []\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./main-guest-list.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-header></app-header>\n<div >\n    <app-guest-list style=\"display: flex; align-items: center; justify-content: center; width: 100%;\" [guestList]=\"guestList\"></app-guest-list>\n</div>"
+        },
+        {
+            "name": "ProfileImageComponent",
+            "id": "component-ProfileImageComponent-ffb8ba5005c2af7f58bc8bd48024a27009a555ae28f9aa5ce6fb6391f16544da82c184594dcaa9a16735f1b0f77611e5e0bfd2022dfd9e9dd5139f540113419b",
+            "file": "src/app/components/atoms/props/profile-image/profile-image.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-profile-image",
+            "styleUrls": [
+                "./profile-image.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./profile-image.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "\"sm\" | \"md\" | \"lg\"",
+                    "decorators": []
+                },
+                {
+                    "name": "src",
+                    "defaultValue": "'assets/icon/default-img.jpg'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-profile-image',\n  templateUrl: './profile-image.component.html',\n  styleUrls: ['./profile-image.component.css']\n})\nexport class ProfileImageComponent implements OnInit {\n\n  @Input() size: 'sm' | 'md' | 'lg' = 'md'\n  @Input() src: string = 'assets/icon/default-img.jpg'\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "img{\r\n    border-radius: 50%;\r\n    border: 1px solid rgb(207, 207, 207);\r\n}\r\n\r\nimg.md{\r\n    height: 32px;\r\n    width: 32px;\r\n}\r\n\r\nimg.sm{\r\n    height: 24px;\r\n    width: 24px;\r\n}\r\n\r\nimg.lg{\r\n    height: 48px;\r\n    width: 48px;\r\n}",
+                    "styleUrl": "./profile-image.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<img [src]=\"src\" alt=\"profile-img\" [class]=\"size\">"
+        },
+        {
+            "name": "TextComponent",
+            "id": "component-TextComponent-8b3899d3044c1a9463db4b2c296cc0e7c44a0f7ca49db00f66f222506607ba5235734217c6c53aee5170f2bab274ea63db6257b9c9008964ab597fe43ae521df",
+            "file": "src/app/components/atoms/typografy/text/text.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-text",
+            "styleUrls": [
+                "./text.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./text.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "content",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-text',\n  templateUrl: './text.component.html',\n  styleUrls: ['./text.component.css']\n})\nexport class TextComponent implements OnInit {\n\n  @Input() content: string = ''\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "p{\r\n    font-weight: 400;\r\n    font-size: 14px;\r\n}\r\n\r\n\r\n.text-muted{\r\n    color: rgba(128, 128, 128, 0.252);\r\n}",
+                    "styleUrl": "./text.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p>{{content}}</p>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-592104695177ee7b598de43e2639f9c6e40decb5965111eb27cddc2ab245d42e27085ffeeab0eb0ae88cb3e09c2abc914e5f182eca130f0fdcde32536d7bf3fc",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppComponent } from './app.component';\nimport { ButtonComponent } from './components/atoms/button/button.component';\nimport { TextComponent } from './components/atoms/typografy/text/text.component';\nimport { HeaderComponent } from './components/molecules/header/header.component';\nimport { GuestCardComponent } from './components/molecules/guest-card/guest-card.component';\nimport { HeadingComponent } from './components/atoms/typografy/heading/heading.component';\nimport { ProfileImageComponent } from './components/atoms/props/profile-image/profile-image.component';\nimport { GuestListComponent } from './components/organisms/guest-list/guest-list.component';\nimport { MainGuestListComponent } from './components/templates/main-guest-list/main-guest-list.component';\nimport { HomePageComponent } from './components/pages/home-page/home-page.component';\nimport { InputComponent } from './components/atoms/input/input.component';\nimport { AddMemberComponent } from './components/molecules/add-member/add-member.component';\n\n\n@NgModule({\n  declarations: [\n    AppComponent, \n    ButtonComponent, \n    HeadingComponent, \n    TextComponent, \n    HeaderComponent, \n    GuestCardComponent, \n    ProfileImageComponent, GuestListComponent, MainGuestListComponent, HomePageComponent, InputComponent, AddMemberComponent\n  ],\n  imports: [BrowserModule],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AddMemberComponent"
+                        },
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "GuestCardComponent"
+                        },
+                        {
+                            "name": "GuestListComponent"
+                        },
+                        {
+                            "name": "HeaderComponent"
+                        },
+                        {
+                            "name": "HeadingComponent"
+                        },
+                        {
+                            "name": "HomePageComponent"
+                        },
+                        {
+                            "name": "InputComponent"
+                        },
+                        {
+                            "name": "MainGuestListComponent"
+                        },
+                        {
+                            "name": "ProfileImageComponent"
+                        },
+                        {
+                            "name": "TextComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "BtnIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/typografy/heading/heading.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/typografy/text/text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Empty",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "GuestCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "H4",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/typografy/heading/heading.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LargeImage",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "MdImage",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "OwnerCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "SmallImage",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n  template: `\r\n   <app-button [class]=\"class\">\r\n    Button\r\n   </app-button>\r\n  `\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n  moduleMetadata: {\r\n    declarations: [\r\n        ProfileImageComponent,\r\n        HeadingComponent,\r\n        TextComponent\r\n    ]\r\n  }\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/typografy/heading/heading.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/typografy/text/text.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/components/atoms/button/button.stories.ts": [
+                {
+                    "name": "BtnIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n  template: `\r\n   <app-button [class]=\"class\">\r\n    Button\r\n   </app-button>\r\n  `\r\n})"
+                }
+            ],
+            "src/app/components/atoms/typografy/heading/heading.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/typografy/heading/heading.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "H4",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/typografy/heading/heading.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/typografy/heading/heading.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+                }
+            ],
+            "src/app/components/atoms/typografy/text/text.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/typografy/text/text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/typografy/text/text.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+                }
+            ],
+            "src/app/components/atoms/props/profile-image/profile-image.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LargeImage",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "MdImage",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "SmallImage",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n})"
+                }
+            ],
+            "src/app/components/molecules/guest-card/guest-card.stories.ts": [
+                {
+                    "name": "Empty",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "GuestCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "OwnerCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n  moduleMetadata: {\r\n    declarations: [\r\n        ProfileImageComponent,\r\n        HeadingComponent,\r\n        TextComponent\r\n    ]\r\n  }\r\n})"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BtnIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/props/profile-image/profile-image.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProfileImageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LargeImage",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MdImage",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SmallImage",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/props/profile-image/profile-image.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/typografy/heading/heading.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeadingComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/typografy/heading/heading.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/typografy/heading/heading.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "H4",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/typografy/heading/heading.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/typografy/text/text.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/typografy/text/text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/atoms/typografy/text/text.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/molecules/add-member/add-member.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AddMemberComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/molecules/guest-card/guest-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GuestCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Empty",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "GuestCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "OwnerCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/molecules/guest-card/guest-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/molecules/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/organisms/guest-list/guest-list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GuestListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/pages/home-page/home-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomePageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/templates/main-guest-list/main-guest-list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainGuestListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/guest.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Guest",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

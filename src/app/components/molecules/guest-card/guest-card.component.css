@@ -1,0 +1,12 @@
+.guest-card-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(128, 128, 128, 0.164);
+    height: 50px;
+    max-width: 600px;
+    padding: 0.5em;
+    padding-inline: 1em;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}

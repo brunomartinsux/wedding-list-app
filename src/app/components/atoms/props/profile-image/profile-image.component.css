@@ -1,0 +1,19 @@
+img{
+    border-radius: 50%;
+    border: 1px solid rgb(207, 207, 207);
+}
+
+img.md{
+    height: 32px;
+    width: 32px;
+}
+
+img.sm{
+    height: 24px;
+    width: 24px;
+}
+
+img.lg{
+    height: 48px;
+    width: 48px;
+}

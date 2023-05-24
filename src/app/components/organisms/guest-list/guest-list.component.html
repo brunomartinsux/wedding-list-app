@@ -1,0 +1,12 @@
+<div class="guest-list-container">
+    <app-heading content="Share list" class="h4"></app-heading>
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px">
+        <app-text content="List members" class="text-muted"></app-text>
+        <app-add-member (newGuestEvent)="addGuest($event)"></app-add-member>
+    </div>
+    <div class="scroll-behavior">
+        <ng-container *ngFor="let guest of guestList; index as indexOfGuest">
+            <app-guest-card [guest]="guest" (onRemoveClicked)="removeGuest(indexOfGuest)"></app-guest-card>
+        </ng-container>
+    </div> 
+</div>

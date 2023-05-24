@@ -1,0 +1,16 @@
+div.h1{
+    font-size: 36px;
+    font-weight: 500;
+    color: rgba(219, 219, 219, 0.971);
+}
+
+
+div.h4{
+   font-weight: 500;
+   color: rgb(32, 32, 32); 
+   font-size: 18px;
+}
+
+.text-muted{
+    color: rgba(128, 128, 128, 0.252);
+}

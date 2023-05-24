@@ -1,0 +1,12 @@
+<div class="guest-card-container">
+    <div style="display: flex; align-items: center;">
+        <app-profile-image [src]="guest.img ? guest.img : 'assets/icon/default-img.jpg'" [size]="'md'" style="margin-right: 16px;"></app-profile-image>
+        <app-text [content]="guest.name"></app-text>
+    </div>
+    <app-heading *ngIf="guest.status == 'owner'; else elseStatus" [content]="guest.status" (click)="removeGuest()" [class]="'h4 text-muted'"></app-heading>
+    <ng-template #elseStatus>
+        <app-button *ngIf="guest?.status" class="btn-icon" (click)="removeGuest()">
+            x
+        </app-button>
+    </ng-template>
+</div>

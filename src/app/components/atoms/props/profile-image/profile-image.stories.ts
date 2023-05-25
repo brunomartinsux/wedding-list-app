@@ -4,7 +4,7 @@ import { ProfileImageComponent } from './profile-image.component';
 
 export default {
   component: ProfileImageComponent,
-  title: 'Props/Image',
+  title: 'Atoms/Image',
   excludeStories: /.*Data$/,
 } as Meta;
 

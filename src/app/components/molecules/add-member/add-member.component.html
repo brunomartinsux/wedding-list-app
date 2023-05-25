@@ -1,6 +1,6 @@
 <app-button class="primary" *ngIf="!showGuestInput" (click)="showGuestInput = !showGuestInput">Add Guest</app-button>
 <div style="display: flex;align-items: center;" *ngIf="showGuestInput" >
-    <app-input (onChangeEvent)="guestName = $event" placeholder="Type your guests name">Add Guest</app-input>
+    <app-input (onChangeEvent)="guestName = $event" placeholder="Type your guests name"></app-input>
     <app-button class="btn-icon success" style="margin-inline: 4px;" (click)="emitNewGuest()">+</app-button>
     <app-button class="btn-icon danger" (click)="showGuestInput = !showGuestInput">x</app-button>
 </div>

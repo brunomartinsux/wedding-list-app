@@ -4,7 +4,7 @@ import { ButtonComponent } from './button.component';
 
 export default {
   component: ButtonComponent,
-  title: 'Buttons',
+  title: 'Atoms/Buttons',
   excludeStories: /.*Data$/,
 } as Meta;
 

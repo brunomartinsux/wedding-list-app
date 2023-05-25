@@ -1,11 +1,10 @@
 
 import { Meta, Story } from '@storybook/angular';
-import { TextComponent } from './text.component';
-
+import { InputComponent } from './input.component';
 
 export default {
-  component: TextComponent,
-  title: 'Atoms/Text',
+  component: InputComponent,
+  title: 'Atoms/Input',
   excludeStories: /.*Data$/,
 } as Meta;
 
@@ -14,10 +13,15 @@ const Template: Story = args => ({
   props: {
     ...args,
   },
+  template: `
+  <app-input>
+  </app-input>
+  `
 });
 
 export const Default = Template.bind({});
 Default.args = {
-    content: 'Texto padrão',
+    placeholder: 'Digite aqui...',
 };
+
 

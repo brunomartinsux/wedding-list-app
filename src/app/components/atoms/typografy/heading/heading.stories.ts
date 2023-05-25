@@ -6,7 +6,7 @@ import { HeadingComponent } from './heading.component';
 
 export default {
   component: HeadingComponent,
-  title: 'Typografy/Heading',
+  title: 'Atoms/Heading',
   excludeStories: /.*Data$/,
 } as Meta;
 
